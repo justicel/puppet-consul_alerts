@@ -1,0 +1,12 @@
+#Initfile for consul-alerts
+#Managed by puppet
+#Do not modify by hand
+
+start on runlevel [2345]
+stop on runlevel [016]
+respawn
+respawn limit 5 30
+
+chdir <%= @binary_path %>
+
+exec consul-alerts start --consul-dc=<%= @data_center %> <% if @watch_events -%>--watch-events<% end -%><% if @watch_checks -%> --watch-checks<% end -%>

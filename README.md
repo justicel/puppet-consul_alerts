@@ -12,7 +12,7 @@
 
 ## Overview
 
-This module can install the wkhtmltox toolkit to your machine. It supports:
+This module can install the consul_alerts toolkit to your machine. It supports:
  * Debian Wheezy
  * Ubuntu Precise/Trusty
  * CentOS/RHEL 5 or 6
@@ -27,7 +27,7 @@ Will keep updated version as you install new versions of the consul-alerts binar
 
 ## Setup
 
-### What wkhtmltox affects
+### What consul_alerts affects
 
 * Installs a version specific version of consul-alerts to your system
 

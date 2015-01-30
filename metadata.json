@@ -7,9 +7,61 @@
   "source": "https://github.com/justicel/puppet-consul_alerts.git",
   "project_page": "https://github.com/justicel/puppet-consul_alerts",
   "issues_url": "https://github.com/justicel/puppet-consul_alerts/issues",
+  "tags": [
+    "consul",
+    "consul-alerts",
+    "ops",
+    "devops",
+    "monitoring",
+    "centos",
+    "debian",
+    "ubuntu"
+  ],
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
     {"name":"maestrodev-wget", "version_requirement":">= 1.5.7"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
+    }
   ]
 }
 

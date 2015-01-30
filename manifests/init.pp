@@ -21,6 +21,10 @@
 #   Use the default repository and download url either true or false (bool)
 # [*custom_url*]
 #   If you want to specify a custom download filename/location, specify it here
+# [*alert_addr*]
+#   Location to run the consul-alert service API on. Defaults to 127.0.0.1:9000
+# [*consul_url*]
+#   URL for the consul instance you want to use with alerts service
 # [*data_center*]
 #   Specify the data-center name in which to run the consul-alerts checks and k/v lookups
 # [*watch_events*]
@@ -31,6 +35,7 @@
 # === Examples
 #
 #  class { 'consul_alerts':
+#    consul_url  => '127.0.0.1:8500',
 #    data_center => 'dc1',
 #  }
 #
@@ -50,10 +55,24 @@ class consul_alerts (
   $arch         = $::architecture,
   $default_url  = true,
   $custom_url   = undef,
+  $alert_addr   = '127.0.0.1:9000',
+  $consul_url   = '127.0.0.1:8500',
   $data_center  = 'dc1',
   $watch_events = true,
   $watch_checks = true,
 ) {
+  #Variable validations
+  validate_bool($enabled)
+  validate_bool($default_url)
+  validate_bool($watch_events)
+  validate_bool($watch_checks)
+  validate_absolute_path($binary_path)
+  validate_string($version)
+  validate_string($repo_url)
+  validate_string($arch)
+  validate_string($alert_addr)
+  validate_string($consul_url)
+  validate_string($data_center)
 
   #Build the full download URL
   $filename     = "consul-alerts-${version}-linux-${arch}.tar"

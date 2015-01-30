@@ -9,4 +9,4 @@ respawn limit 5 30
 
 chdir <%= @binary_path %>
 
-exec consul-alerts start --consul-dc=<%= @data_center %> <% if @watch_events -%>--watch-events<% end -%><% if @watch_checks -%> --watch-checks<% end -%>
+exec consul-alerts start --alert-addr=<%= @alert_addr %> --consul-addr=<%= @consul_url %> --consul-dc=<%= @data_center %> <% if @watch_events -%>--watch-events<% end -%><% if @watch_checks -%> --watch-checks<% end -%>

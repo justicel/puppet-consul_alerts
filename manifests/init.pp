@@ -84,16 +84,16 @@ class consul_alerts (
   #Download consul-alerts binary
   include ::wget
 
-  wget::fetch { 'download_consul_alerts':
-    source      => $download_url,
-    destination => "/tmp/${filename}",
-    cache_dir   => '/var/tmp',
-    notify      => Exec['extract_consul_alerts'],
+  exec { 'download_consul_alerts':
+    command => "wget -q --no-check-certificate $download_url -O /var/tmp/${filename}",
+    path    => '/usr/bin:/usr/local/bin:/bin',
+    unless  => "test -s /var/tmp/${filename}",
+    notify  => Exec['extract_consul_alerts'],
   }
 
   #Install binary
   exec { 'extract_consul_alerts':
-    command     => "tar -xf /tmp/${filename}",
+    command     => "tar -xf /var/tmp/${filename}",
     cwd         => $binary_path,
     refreshonly => true,
     path        => ['/bin', '/sbin', '/usr/bin', '/usr/sbin'],

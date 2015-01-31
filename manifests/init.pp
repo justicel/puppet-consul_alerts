@@ -85,7 +85,7 @@ class consul_alerts (
   include ::wget
 
   exec { 'download_consul_alerts':
-    command => "wget -q --no-check-certificate $download_url -O /var/tmp/${filename}",
+    command => "wget -q --no-check-certificate ${download_url} -O /var/tmp/${filename}",
     path    => '/usr/bin:/usr/local/bin:/bin',
     unless  => "test -s /var/tmp/${filename}",
     notify  => Exec['extract_consul_alerts'],

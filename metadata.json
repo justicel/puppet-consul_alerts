@@ -1,9 +1,9 @@
 {
   "name": "jlondon-consul_alerts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Justice London",
   "summary": "Puppet module to configure and install consul-alerts service",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/justicel/puppet-consul_alerts.git",
   "project_page": "https://github.com/justicel/puppet-consul_alerts",
   "issues_url": "https://github.com/justicel/puppet-consul_alerts/issues",
@@ -11,14 +11,12 @@
     "consul",
     "consul-alerts",
     "ops",
-    "devops",
     "monitoring",
     "centos",
-    "debian",
     "ubuntu"
   ],
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-stdlib","version_requirement":">= 4.1.0"},
     {"name":"maestrodev-wget", "version_requirement":">= 1.5.7"}
   ],
   "operatingsystem_support": [
